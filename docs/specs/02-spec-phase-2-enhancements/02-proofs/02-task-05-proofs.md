@@ -143,7 +143,7 @@ Key features:
 
 **Test Case**: Check footer version display
 
-**Expected Result**: Version matches manifest.json version (1.0.0)
+**Expected Result**: Version matches manifest.json version (0.1.0)
 
 **Implementation**: `getManifestVersion()` reads version from `chrome.runtime.getManifest()`.
 
@@ -153,7 +153,7 @@ Key features:
 
 **Test Case**: Check footer version display format
 
-**Expected Result**: Displays "Version: 1.0.0 (348bf02)"
+**Expected Result**: Displays "Version: 0.1.0 (348bf02)"
 
 **Implementation**: `displayVersion()` formats version and commit hash as "Version: {version} ({hash})".
 

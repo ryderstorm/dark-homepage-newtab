@@ -9,7 +9,7 @@
   "manifest_version": 3,
   "name": "Dark New Tab Homepage",
   "description": "Dark new tab that loads my self-hosted homepage.dev dashboard.",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "permissions": ["storage"],
   "chrome_url_overrides": {
     "newtab": "newtab.html"
@@ -19,7 +19,7 @@
     "open_in_tab": true
   },
   "content_security_policy": {
-    "extension_pages": "default-src 'self'"
+    "extension_pages": "default-src 'self'; connect-src 'self' https: http:"
   }
 }
 ```
