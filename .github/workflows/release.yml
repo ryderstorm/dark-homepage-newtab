@@ -8,27 +8,51 @@ on:
     types:
       - completed
 
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   release:
     name: Semantic Release
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      contents: read  # Required for actions/checkout
+      id-token: write  # Required for Octo STS
     steps:
+      # Chainguard Octo STS authentication
+      - uses: octo-sts/action@6177b4481c00308b3839969c3eca88c96a91775f # v1.0.0
+        id: octo-sts
+        with:
+          scope: ${{ github.repository }}
+          identity: main-semantic-release
+
       - name: Checkout code
         uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-tags: true
+          persist-credentials: false
 
-      - name: Authenticate with Chainguard Octo STS
-        uses: chainguard-dev/actions/octo-sts@main
-        with:
-          identity: main-semantic-release
+      - name: Get GitHub App User ID
+        id: get-user-id
+        run: echo "user-id=$(gh api "/users/octo-sts[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.octo-sts.outputs.token }}
 
       - name: Configure git author
         run: |
-          git config user.name "octo-sts[bot]"
-          git config user.email "octo-sts[bot]@users.noreply.github.com"
+          git config --global user.name 'octo-sts[bot]'
+          git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+octo-sts[bot]@users.noreply.github.com'
+
+      - name: Use PAT for pushes to origin
+        run: |
+          git remote set-url origin \
+            https://x-access-token:${{ steps.octo-sts.outputs.token }}@github.com/${{ github.repository }}.git
+          # sanity check
+          git ls-remote --heads origin >/dev/null
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v6.1.0
@@ -41,7 +65,7 @@ jobs:
 
       - name: Run semantic-release
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ steps.octo-sts.outputs.token }}
         run: |
           semantic-release version --config .releaserc.toml
           semantic-release publish --config .releaserc.toml
