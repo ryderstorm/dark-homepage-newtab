@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dark New Tab Homepage - Options</title>
+
+    <!-- Hint Chrome that this is dark UI -->
+    <meta name="color-scheme" content="dark" />
+
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dark New Tab Homepage Settings</h1>
+
+      <form id="options-form">
+        <div class="form-group">
+          <label for="url-input">New Tab URL</label>
+          <div class="url-input-wrapper">
+            <input
+              type="text"
+              id="url-input"
+              name="url"
+              placeholder="https://example.com"
+              autocomplete="url"
+              aria-label="New Tab URL"
+              aria-describedby="url-error url-validation-message"
+            />
+          </div>
+          <div id="url-validation-message" class="url-validation-message" aria-live="polite" aria-atomic="true"></div>
+          <div id="url-error" class="error-message" role="alert" aria-live="polite"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="redirect-delay-input">Redirect Delay (milliseconds)</label>
+          <input
+            type="number"
+            id="redirect-delay-input"
+            name="redirectDelay"
+            placeholder="0"
+            min="0"
+            step="100"
+            aria-label="Redirect Delay in milliseconds"
+            aria-describedby="redirect-delay-error"
+          />
+          <div id="redirect-delay-error" class="error-message" role="alert" aria-live="polite"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="background-color-input">Background Color</label>
+          <div class="color-input-wrapper">
+            <input
+              type="color"
+              id="color-picker"
+              name="colorPicker"
+              value="#05060a"
+              aria-label="Background color picker"
+            />
+            <input
+              type="text"
+              id="background-color-input"
+              name="backgroundColor"
+              placeholder="#05060a"
+              autocomplete="off"
+              aria-label="Background color text input"
+              aria-describedby="background-color-error"
+            />
+          </div>
+          <div class="preset-colors">
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#191970"
+                aria-label="Midnight Blue preset color"
+                title="Midnight Blue"
+              ></button>
+              <span class="preset-color-label">Midnight Blue</span>
+            </div>
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#36454F"
+                aria-label="Charcoal preset color"
+                title="Charcoal"
+              ></button>
+              <span class="preset-color-label">Charcoal</span>
+            </div>
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#2D1B3D"
+                aria-label="Deep Purple preset color"
+                title="Deep Purple"
+              ></button>
+              <span class="preset-color-label">Deep Purple</span>
+            </div>
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#0B0B0B"
+                aria-label="Obsidian preset color"
+                title="Obsidian"
+              ></button>
+              <span class="preset-color-label">Obsidian</span>
+            </div>
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#000080"
+                aria-label="Dark Navy preset color"
+                title="Dark Navy"
+              ></button>
+              <span class="preset-color-label">Dark Navy</span>
+            </div>
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#2F4F4F"
+                aria-label="Dark Slate preset color"
+                title="Dark Slate"
+              ></button>
+              <span class="preset-color-label">Dark Slate</span>
+            </div>
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#05060a"
+                aria-label="Rich Black preset color"
+                title="Rich Black"
+              ></button>
+              <span class="preset-color-label">Rich Black</span>
+            </div>
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#000e34"
+                aria-label="Midnight preset color"
+                title="Midnight"
+              ></button>
+              <span class="preset-color-label">Midnight</span>
+            </div>
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#2D2D2D"
+                aria-label="Dark Slate Gray preset color"
+                title="Dark Slate Gray"
+              ></button>
+              <span class="preset-color-label">Dark Slate Gray</span>
+            </div>
+            <div class="preset-color-item">
+              <button
+                type="button"
+                class="preset-color-btn"
+                data-color="#4B0082"
+                aria-label="Deep Indigo preset color"
+                title="Deep Indigo"
+              ></button>
+              <span class="preset-color-label">Deep Indigo</span>
+            </div>
+          </div>
+          <div id="background-color-error" class="error-message" role="alert" aria-live="polite"></div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" id="save-button" aria-label="Save settings">Save</button>
+          <div id="save-success" class="success-message" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+      <footer id="version-footer" class="version-footer"></footer>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
+
