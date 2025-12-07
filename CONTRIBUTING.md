@@ -126,7 +126,7 @@ git commit -m "feat!: change storage API" -m "BREAKING CHANGE: migrate from chro
 
 Branches should follow this format:
 
-```
+```text
 <type>/<description>
 ```
 
