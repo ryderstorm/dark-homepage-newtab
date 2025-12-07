@@ -6,23 +6,24 @@
     "ref_name": {
       "include": [
         "refs/heads/main"
-      ]
+      ],
+      "exclude": []
     }
   },
   "rules": [
     {
-      "type": "deletion",
-      "parameters": {}
+      "type": "deletion"
     },
     {
-      "type": "non_fast_forward",
-      "parameters": {}
+      "type": "non_fast_forward"
     },
     {
       "type": "pull_request",
       "parameters": {
-        "required_approving_review_count": 1,
+        "dismiss_stale_reviews_on_push": false,
+        "require_code_owner_review": false,
         "require_last_push_approval": true,
+        "required_approving_review_count": 1,
         "required_review_thread_resolution": true,
         "allowed_merge_methods": [
           "squash"
@@ -35,26 +36,16 @@
         "strict_required_status_checks_policy": true,
         "required_status_checks": [
           {
-            "context": "Run Tests",
-            "integration_id": null
+            "context": "Run Tests"
           },
           {
-            "context": "Run Linting",
-            "integration_id": null
+            "context": "Run Linting"
           }
         ]
       }
     },
     {
-      "type": "required_linear_history",
-      "parameters": {}
-    }
-  ],
-  "bypass_actors": [
-    {
-      "actor_id": 1,
-      "actor_type": "RepositoryRole",
-      "bypass_mode": "always"
+      "type": "required_linear_history"
     }
   ]
 }
