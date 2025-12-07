@@ -180,7 +180,7 @@
 - [x] 5.14 Verify branch protection ruleset is active using `gh api repos/{owner}/{repo}/rulesets`
 - [x] 5.15 Test branch protection by attempting to push directly to main and verifying it fails (or is blocked)
 
-### [ ] 6.0 Renovate Bot Configuration
+### [x] 6.0 Renovate Bot Configuration
 
 #### 6.0 Proof Artifact(s)
 
@@ -191,15 +191,15 @@
 
 #### 6.0 Tasks
 
-- [ ] 6.1 Create `.github/renovate.json` configuration file
-- [ ] 6.2 Add $schema pointing to Renovate schema JSON
-- [ ] 6.3 Add description field explaining the configuration purpose
-- [ ] 6.4 Configure extends array with "config:best-practices", ":semanticCommits", and ":enablePreCommit"
-- [ ] 6.5 Add labels array with "dependencies" label
-- [ ] 6.6 Configure reviewersFromCodeOwners as true to use CODEOWNERS for PR reviewers
-- [ ] 6.7 Add packageRules array with automerge rule for non-major updates (minor, patch, pin, digest) if CI passes
-- [ ] 6.8 Add packageRules array with grouping rule for non-major dependencies (minor, patch) to reduce PR noise
-- [ ] 6.9 Configure ignorePaths array to exclude node_modules, vendor, examples, and test directories
-- [ ] 6.10 Validate Renovate configuration using `npx --yes --package renovate -- renovate-config-validator`
-- [ ] 6.11 Fix any validation errors if present
-- [ ] 6.12 Note that Renovate Bot GitHub App must be installed at repository or organization level (manual step)
+- [x] 6.1 Create `.github/renovate.json` configuration file
+- [x] 6.2 Add $schema pointing to Renovate schema JSON
+- [x] 6.3 Add description field explaining the configuration purpose
+- [x] 6.4 Configure extends array with "config:best-practices", ":semanticCommits", and ":enablePreCommit"
+- [x] 6.5 Add labels array with "dependencies" label
+- [x] 6.6 Configure reviewersFromCodeOwners as true to use CODEOWNERS for PR reviewers
+- [x] 6.7 Add packageRules array with automerge rule for non-major updates (minor, patch, pin, digest) if CI passes
+- [x] 6.8 Add packageRules array with grouping rule for non-major dependencies (minor, patch) to reduce PR noise
+- [x] 6.9 Configure ignorePaths array to exclude node_modules, vendor, examples, and test directories
+- [x] 6.10 Validate Renovate configuration using `npx --yes --package renovate -- renovate-config-validator`
+- [x] 6.11 Fix any validation errors if present
+- [x] 6.12 Note that Renovate Bot GitHub App must be installed at repository or organization level (manual step)
