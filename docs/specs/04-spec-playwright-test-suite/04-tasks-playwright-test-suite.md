@@ -165,7 +165,7 @@
 - [x] 4.32 Write test case "should handle URL validation with real URLs" that types various URL formats (valid and invalid) and verifies UI validation feedback appears correctly (no network mocking needed)
 - [x] 4.33 Run `npx playwright test tests/options.spec.ts` and verify all tests pass
 
-### [ ] 5.0 End-to-End User Flow Testing
+### [~] 5.0 End-to-End User Flow Testing
 
 #### 5.0 Proof Artifact(s)
 
@@ -177,17 +177,17 @@
 
 #### 5.0 Tasks
 
-- [ ] 5.1 Create `tests/e2e.spec.ts` test file
-- [ ] 5.2 Import test, expect from fixtures, NewTabPage and OptionsPage from page objects
-- [ ] 5.3 Write test case "should complete workflow from options configuration to new tab redirect" that configures settings in options page, opens new tab normally with `chrome://newtab`, waits for redirect using `page.waitForURL()`, and verifies redirect occurs to configured URL
-- [ ] 5.4 Write test case "should persist settings across new tab opens" that saves settings, opens multiple new tabs, and verifies settings persist
-- [ ] 5.5 Write test case "should handle multiple configuration changes correctly" that changes settings multiple times and verifies each change is saved and applied
-- [ ] 5.6 Write test case "should handle empty settings gracefully" that clears all settings and verifies default behavior (error message for missing URL)
-- [ ] 5.7 Write test case "should handle invalid URLs gracefully" that sets invalid URL and verifies error handling in new tab page
-- [ ] 5.8 Write test case "should handle extreme delay values" that sets delay to maximum (60000ms) and verifies redirect still occurs
-- [ ] 5.9 Write test case "should handle immediate redirect (0ms delay)" that sets delay to 0 and verifies immediate redirect without loading animation
-- [ ] 5.10 Write test case "should apply background color changes immediately" that changes color in options and verifies it applies to new tab page
-- [ ] 5.11 Run `npx playwright test tests/e2e.spec.ts` and verify all tests pass
+- [x] 5.1 Create `tests/e2e.spec.ts` test file
+- [x] 5.2 Import test, expect from fixtures, NewTabPage and OptionsPage from page objects
+- [x] 5.3 Write test case "should complete workflow from options configuration to new tab redirect" that configures settings in options page, opens new tab normally with `chrome://newtab`, waits for redirect using `page.waitForURL()`, and verifies redirect occurs to configured URL
+- [x] 5.4 Write test case "should persist settings across new tab opens" that saves settings, opens multiple new tabs, and verifies settings persist
+- [x] 5.5 Write test case "should handle multiple configuration changes correctly" that changes settings multiple times and verifies each change is saved and applied
+- [x] 5.6 Write test case "should handle empty settings gracefully" that clears all settings and verifies default behavior (error message for missing URL)
+- [x] 5.7 Write test case "should handle invalid URLs gracefully" that sets invalid URL and verifies error handling in new tab page
+- [x] 5.8 Write test case "should handle extreme delay values" that sets delay to maximum (60000ms) and verifies redirect still occurs
+- [x] 5.9 Write test case "should handle immediate redirect (0ms delay)" that sets delay to 0 and verifies immediate redirect without loading animation
+- [x] 5.10 Write test case "should apply background color changes immediately" that changes color in options and verifies it applies to new tab page
+- [x] 5.11 Run `npx playwright test tests/e2e.spec.ts` and verify all tests pass
 
 ### [ ] 6.0 CI/CD Integration and Documentation
 
