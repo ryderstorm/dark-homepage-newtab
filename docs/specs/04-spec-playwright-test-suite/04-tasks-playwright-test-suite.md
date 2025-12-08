@@ -61,7 +61,7 @@
 - [x] 1.13 Update `.gitignore` to exclude Playwright test artifacts (`test-results/`, `playwright-report/`, `playwright/.cache/`)
 - [x] 1.14 Verify fixtures work by running `npx playwright test --list` (should show no tests yet, but no errors)
 
-### [ ] 2.0 Extension Installation and Setup Testing
+### [x] 2.0 Extension Installation and Setup Testing
 
 #### 2.0 Proof Artifact(s)
 
@@ -73,16 +73,16 @@
 
 #### 2.0 Tasks
 
-- [ ] 2.1 Create `tests/installation.spec.ts` test file
-- [ ] 2.2 Import test and expect from `tests/fixtures.ts` in installation test file
-- [ ] 2.3 Write test case "should load extension successfully" that verifies extension context is created
-- [ ] 2.4 Write test case "should retrieve valid extension ID" that verifies extensionId fixture returns a non-empty string
-- [ ] 2.5 Write test case "should initialize service worker" that verifies service worker is available in context
-- [ ] 2.6 Write test case "should have all required extension files accessible" that navigates to `chrome-extension://${extensionId}/manifest.json` and verifies it loads
-- [ ] 2.7 Write test case "should load newtab.html" that navigates to `chrome-extension://${extensionId}/newtab.html` and verifies page loads
-- [ ] 2.8 Write test case "should load options.html" that navigates to `chrome-extension://${extensionId}/options.html` and verifies page loads
-- [ ] 2.9 Add screenshot capture in at least one test to demonstrate visual confirmation
-- [ ] 2.10 Run `npx playwright test tests/installation.spec.ts` and verify all tests pass
+- [x] 2.1 Create `tests/installation.spec.ts` test file
+- [x] 2.2 Import test and expect from `tests/fixtures.ts` in installation test file
+- [x] 2.3 Write test case "should load extension successfully" that verifies extension context is created
+- [x] 2.4 Write test case "should retrieve valid extension ID" that verifies extensionId fixture returns a non-empty string
+- [x] 2.5 Write test case "should initialize service worker" that verifies service worker is available in context
+- [x] 2.6 Write test case "should have all required extension files accessible" that navigates to `chrome-extension://${extensionId}/manifest.json` and verifies it loads
+- [x] 2.7 Write test case "should load newtab.html" that navigates to `chrome-extension://${extensionId}/newtab.html` and verifies page loads
+- [x] 2.8 Write test case "should load options.html" that navigates to `chrome-extension://${extensionId}/options.html` and verifies page loads
+- [x] 2.9 Add screenshot capture in at least one test to demonstrate visual confirmation
+- [x] 2.10 Run `npx playwright test tests/installation.spec.ts` and verify all tests pass
 
 ### [ ] 3.0 New Tab Page Functionality Testing
 

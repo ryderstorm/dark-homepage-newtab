@@ -7,8 +7,12 @@ import {
 } from "@playwright/test";
 import * as path from "path";
 import { existsSync } from "fs";
+import { fileURLToPath } from "url";
 
 // Resolve extension path (one level up from tests directory)
+// Use ES module syntax for __dirname equivalent
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const pathToExtension = path.join(__dirname, "..");
 
 // Verify manifest exists
@@ -31,7 +35,7 @@ export const test = base.extend<ExtensionFixtures>({
   context: async ({}, use) => {
     const context = await chromium.launchPersistentContext("", {
       channel: "chromium",
-      headless: false, // Extensions require non-headless mode
+      headless: true, // Run in headless mode
       args: [
         `--disable-extensions-except=${pathToExtension}`,
         `--load-extension=${pathToExtension}`,
@@ -43,28 +47,75 @@ export const test = base.extend<ExtensionFixtures>({
     await context.close();
   },
 
-  // Extension ID fixture: retrieves extension ID from service worker
+  // Extension ID fixture: retrieves extension ID from extension page using chrome.runtime
   extensionId: async ({ context }, use) => {
-    // Wait for service worker to be available
-    const [serviceWorker] = await Promise.all([
-      context.waitForEvent("serviceworker"),
-    ]);
+    // Wait for extension to load
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // Get extension ID from service worker URL
-    // Service worker URL format: chrome-extension://<extension-id>/service-worker.js
-    const serviceWorkerUrl = serviceWorker.url();
-    const extensionIdMatch = serviceWorkerUrl.match(
-      /chrome-extension:\/\/([a-z]{32})/
-    );
+    let extensionId: string | null = null;
 
-    if (!extensionIdMatch) {
+    // Method 1: Navigate to chrome://newtab which loads the extension's newtab.html
+    // Then use chrome.runtime.id to get the extension ID
+    const page = await context.newPage();
+    try {
+      await page.goto("chrome://newtab", { waitUntil: "domcontentloaded", timeout: 10000 });
+      
+      // Get extension ID using chrome.runtime API from the extension page
+      extensionId = await page.evaluate(() => {
+        return new Promise<string | null>((resolve) => {
+          if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.id) {
+            resolve(chrome.runtime.id);
+          } else {
+            resolve(null);
+          }
+        });
+      });
+
+      // If that didn't work, try to get it from the page URL
+      if (!extensionId) {
+        const url = page.url();
+        const match = url.match(/chrome-extension:\/\/([a-z]{32})/);
+        if (match) {
+          extensionId = match[1];
+        }
+      }
+    } catch (error) {
+      // chrome://newtab failed, try alternatives
+    } finally {
+      await page.close();
+    }
+
+    // Method 2: Try accessing options.html directly by trying common extension ID patterns
+    // or use CDP to find extension targets
+    if (!extensionId) {
+      const tempPage = await context.newPage();
+      try {
+        const client = await context.newCDPSession(tempPage);
+        const targets = await client.send("Target.getTargets");
+        
+        for (const target of targets.targetInfos) {
+          if (target.url?.startsWith("chrome-extension://")) {
+            const match = target.url.match(/chrome-extension:\/\/([a-z]{32})/);
+            if (match) {
+              extensionId = match[1];
+              break;
+            }
+          }
+        }
+        await client.detach();
+      } catch (error) {
+        // CDP failed
+      } finally {
+        await tempPage.close();
+      }
+    }
+
+    if (!extensionId || !/^[a-z]{32}$/.test(extensionId)) {
       throw new Error(
-        "Could not extract extension ID from service worker URL: " +
-          serviceWorkerUrl
+        "Could not extract extension ID. Extension may not be loaded correctly."
       );
     }
 
-    const extensionId = extensionIdMatch[1];
     await use(extensionId);
   },
 
