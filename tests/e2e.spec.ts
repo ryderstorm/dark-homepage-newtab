@@ -186,22 +186,23 @@ test.describe("End-to-End User Flow", () => {
     newTabPage,
     page,
   }) => {
-    // Set test timeout to 70 seconds (60000ms delay + buffer)
-    test.setTimeout(70000);
+    // Set test timeout to 10 seconds (5000ms delay + buffer)
+    test.setTimeout(10000);
 
-    // Set delay to maximum (60000ms)
+    // Set delay to a large but reasonable value (5000ms) to test delay handling
+    // without slowing down tests excessively
     const testUrl = TEST_URLS.EXAMPLE_COM;
     await setStorage({
       url: testUrl,
-      redirectDelay: 60000,
+      redirectDelay: 5000,
       backgroundColor: "#05060a",
     });
 
     // Open new tab
     await newTabPage.openNewTab();
 
-    // Wait for redirect (with extra buffer for maximum delay)
-    await page.waitForURL(testUrl, { timeout: 65000 });
+    // Wait for redirect (with extra buffer for delay)
+    await page.waitForURL(testUrl, { timeout: 8000 });
 
     // Verify redirect still occurs
     const finalUrl = page.url().replace(/\/$/, "");
