@@ -3,10 +3,12 @@ import {
   expect,
   chromium,
   BrowserContext,
+  Page,
 } from "@playwright/test";
 import * as path from "path";
 import { existsSync } from "fs";
 import { fileURLToPath } from "url";
+import { NewTabPage } from "./page-objects/NewTabPage";
 
 // Resolve extension path (one level up from tests directory)
 // Use ES module syntax for __dirname equivalent
@@ -26,6 +28,8 @@ type ExtensionFixtures = {
   setStorage: (data: Record<string, any>) => Promise<void>;
   getStorage: (keys?: string | string[]) => Promise<Record<string, any>>;
   clearStorage: () => Promise<void>;
+  newTabPage: NewTabPage;
+  page: Page;
 };
 
 // Extend base test with extension fixtures
@@ -61,7 +65,7 @@ export const test = base.extend<ExtensionFixtures>({
         waitUntil: "domcontentloaded",
         timeout: 10000,
       });
-
+      
       // Get extension ID using chrome.runtime API from the extension page
       extensionId = await page.evaluate(() => {
         return new Promise<string | null>((resolve) => {
@@ -98,7 +102,7 @@ export const test = base.extend<ExtensionFixtures>({
       try {
         const client = await context.newCDPSession(tempPage);
         const targets = await client.send("Target.getTargets");
-
+        
         for (const target of targets.targetInfos) {
           if (target.url?.startsWith("chrome-extension://")) {
             const match = target.url.match(/chrome-extension:\/\/([a-z]{32})/);
@@ -126,7 +130,7 @@ export const test = base.extend<ExtensionFixtures>({
   },
 
   // Storage helper: set storage values
-  setStorage: async ({ context, extensionId }, use) => {
+  setStorage: async ({ context, extensionId: _extensionId }, use) => {
     await use(async (data: Record<string, any>) => {
       // Navigate to extension page to access chrome.storage API
       const page = await context.newPage();
@@ -137,13 +141,13 @@ export const test = base.extend<ExtensionFixtures>({
           waitUntil: "domcontentloaded",
         });
 
-        await page.evaluate((storageData) => {
-          return new Promise<void>((resolve) => {
-            chrome.storage.local.set(storageData, () => {
-              resolve();
-            });
+      await page.evaluate((storageData) => {
+        return new Promise<void>((resolve) => {
+          chrome.storage.local.set(storageData, () => {
+            resolve();
           });
-        }, data);
+        });
+      }, data);
       } finally {
         await page.close();
       }
@@ -151,7 +155,7 @@ export const test = base.extend<ExtensionFixtures>({
   },
 
   // Storage helper: get storage values
-  getStorage: async ({ context, extensionId }, use) => {
+  getStorage: async ({ context, extensionId: _extensionId }, use) => {
     await use(async (keys?: string | string[]) => {
       // Navigate to extension page to access chrome.storage API
       const page = await context.newPage();
@@ -162,13 +166,13 @@ export const test = base.extend<ExtensionFixtures>({
           waitUntil: "domcontentloaded",
         });
 
-        return await page.evaluate((storageKeys) => {
-          return new Promise<Record<string, any>>((resolve) => {
-            chrome.storage.local.get(storageKeys || null, (result) => {
-              resolve(result);
-            });
+      return await page.evaluate((storageKeys) => {
+        return new Promise<Record<string, any>>((resolve) => {
+          chrome.storage.local.get(storageKeys || null, (result) => {
+            resolve(result);
           });
-        }, keys);
+        });
+      }, keys);
       } finally {
         await page.close();
       }
@@ -176,7 +180,7 @@ export const test = base.extend<ExtensionFixtures>({
   },
 
   // Storage helper: clear storage
-  clearStorage: async ({ context, extensionId }, use) => {
+  clearStorage: async ({ context, extensionId: _extensionId }, use) => {
     await use(async () => {
       // Navigate to extension page to access chrome.storage API
       const page = await context.newPage();
@@ -187,17 +191,30 @@ export const test = base.extend<ExtensionFixtures>({
           waitUntil: "domcontentloaded",
         });
 
-        await page.evaluate(() => {
-          return new Promise<void>((resolve) => {
-            chrome.storage.local.clear(() => {
-              resolve();
-            });
+      await page.evaluate(() => {
+        return new Promise<void>((resolve) => {
+          chrome.storage.local.clear(() => {
+            resolve();
           });
         });
+      });
       } finally {
         await page.close();
       }
     });
+  },
+
+  // Page fixture: provides a Page instance with automatic cleanup
+  page: async ({ context }, use) => {
+    const page = await context.newPage();
+    await use(page);
+    await page.close();
+  },
+
+  // New tab page fixture: provides a NewTabPage instance (doesn't auto-open, test calls openNewTab() when ready)
+  newTabPage: async ({ page }, use) => {
+    const newTabPage = new NewTabPage(page);
+    await use(newTabPage);
   },
 });
 
