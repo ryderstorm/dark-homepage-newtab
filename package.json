@@ -1,0 +1,20 @@
+{
+  "name": "dark-homepage-newtab",
+  "version": "0.1.0",
+  "description": "Dark new tab that loads my self-hosted homepage.dev dashboard.",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:list": "playwright test --list"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/chrome": "^0.1.32",
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

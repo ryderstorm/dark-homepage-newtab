@@ -34,7 +34,7 @@
 
 ## Tasks
 
-### [ ] 1.0 Setup Playwright Infrastructure and Extension Fixtures
+### [x] 1.0 Setup Playwright Infrastructure and Extension Fixtures
 
 #### 1.0 Proof Artifact(s)
 
@@ -46,20 +46,20 @@
 
 #### 1.0 Tasks
 
-- [ ] 1.1 Create `package.json` file with Node.js project configuration (name, version, description)
-- [ ] 1.2 Install `@playwright/test`, `typescript`, and `@types/node` as dev dependencies using `npm install --save-dev @playwright/test typescript @types/node`
-- [ ] 1.3 Create `tsconfig.json` at project root with Playwright-compatible TypeScript configuration (ES2020 target, CommonJS modules, strict mode)
-- [ ] 1.4 Create `playwright.config.ts` at project root with basic configuration (test directory, timeout settings, headless mode, HTML reporter)
-- [ ] 1.5 Configure Playwright to use Chromium browser with extension loading support
-- [ ] 1.6 Create `tests/` directory structure
-- [ ] 1.7 Create `tests/fixtures.ts` with base test fixture that extends Playwright's test
-- [ ] 1.8 Implement `context` fixture in `tests/fixtures.ts` that resolves extension path using `path.join(__dirname, '..')` and loads Chrome extension using `chromium.launchPersistentContext()` with `--load-extension` and `--disable-extensions-except` arguments
-- [ ] 1.9 Implement `extensionId` fixture in `tests/fixtures.ts` that retrieves extension ID from service worker (Manifest V3) using `context.serviceWorkers()` and `waitForEvent('serviceworker')`
-- [ ] 1.10 Add storage helper methods to fixtures: `setStorage(data)` that uses `page.evaluate()` to call `chrome.storage.local.set()`, `getStorage(keys)` that uses `page.evaluate()` to call `chrome.storage.local.get()`, and `clearStorage()` that clears storage for test isolation
-- [ ] 1.11 Export extended test and expect from `tests/fixtures.ts` for use in test files
-- [ ] 1.12 Create `tests/test-data.ts` file with test URL constants (example.com, httpbin.org, google.com, httpstat.us, chrome://version, jsonplaceholder.typicode.com)
-- [ ] 1.13 Update `.gitignore` to exclude Playwright test artifacts (`test-results/`, `playwright-report/`, `playwright/.cache/`)
-- [ ] 1.14 Verify fixtures work by running `npx playwright test --list` (should show no tests yet, but no errors)
+- [x] 1.1 Create `package.json` file with Node.js project configuration (name, version, description)
+- [x] 1.2 Install `@playwright/test`, `typescript`, and `@types/node` as dev dependencies using `npm install --save-dev @playwright/test typescript @types/node`
+- [x] 1.3 Create `tsconfig.json` at project root with Playwright-compatible TypeScript configuration (ES2020 target, CommonJS modules, strict mode)
+- [x] 1.4 Create `playwright.config.ts` at project root with basic configuration (test directory, timeout settings, headless mode, HTML reporter)
+- [x] 1.5 Configure Playwright to use Chromium browser with extension loading support
+- [x] 1.6 Create `tests/` directory structure
+- [x] 1.7 Create `tests/fixtures.ts` with base test fixture that extends Playwright's test
+- [x] 1.8 Implement `context` fixture in `tests/fixtures.ts` that resolves extension path using `path.join(__dirname, '..')` and loads Chrome extension using `chromium.launchPersistentContext()` with `--load-extension` and `--disable-extensions-except` arguments
+- [x] 1.9 Implement `extensionId` fixture in `tests/fixtures.ts` that retrieves extension ID from service worker (Manifest V3) using `context.serviceWorkers()` and `waitForEvent('serviceworker')`
+- [x] 1.10 Add storage helper methods to fixtures: `setStorage(data)` that uses `page.evaluate()` to call `chrome.storage.local.set()`, `getStorage(keys)` that uses `page.evaluate()` to call `chrome.storage.local.get()`, and `clearStorage()` that clears storage for test isolation
+- [x] 1.11 Export extended test and expect from `tests/fixtures.ts` for use in test files
+- [x] 1.12 Create `tests/test-data.ts` file with test URL constants (example.com, httpbin.org, google.com, httpstat.us, chrome://version, jsonplaceholder.typicode.com)
+- [x] 1.13 Update `.gitignore` to exclude Playwright test artifacts (`test-results/`, `playwright-report/`, `playwright/.cache/`)
+- [x] 1.14 Verify fixtures work by running `npx playwright test --list` (should show no tests yet, but no errors)
 
 ### [ ] 2.0 Extension Installation and Setup Testing
 
