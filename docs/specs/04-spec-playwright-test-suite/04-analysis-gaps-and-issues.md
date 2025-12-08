@@ -21,12 +21,15 @@
 
 ```typescript
 // In test
-await page.evaluate((data) => {
-  chrome.storage.local.set(data);
-}, { url: 'https://example.com', redirectDelay: 1000 });
+await page.evaluate(
+  (data) => {
+    chrome.storage.local.set(data);
+  },
+  { url: "https://example.com", redirectDelay: 1000 }
+);
 
 const storage = await page.evaluate(() => {
-  return chrome.storage.local.get(['url', 'redirectDelay']);
+  return chrome.storage.local.get(["url", "redirectDelay"]);
 });
 ```
 
@@ -53,18 +56,18 @@ const storage = await page.evaluate(() => {
 
 ```typescript
 // In fixtures.ts
-import path from 'path';
-import { existsSync } from 'fs';
+import path from "path";
+import { existsSync } from "fs";
 
-const pathToExtension = path.join(__dirname, '..'); // One level up from tests/
+const pathToExtension = path.join(__dirname, ".."); // One level up from tests/
 
 // Optional: Verify manifest exists
-if (!existsSync(path.join(pathToExtension, 'manifest.json'))) {
-  throw new Error('Extension manifest.json not found');
+if (!existsSync(path.join(pathToExtension, "manifest.json"))) {
+  throw new Error("Extension manifest.json not found");
 }
 
-const context = await chromium.launchPersistentContext('', {
-  channel: 'chromium',
+const context = await chromium.launchPersistentContext("", {
+  channel: "chromium",
   args: [
     `--disable-extensions-except=${pathToExtension}`,
     `--load-extension=${pathToExtension}`,
@@ -103,18 +106,18 @@ const context = await chromium.launchPersistentContext('', {
 
 ```typescript
 // Set URL in options page
-await optionsPage.fillUrl('https://example.com');
+await optionsPage.fillUrl("https://example.com");
 await optionsPage.fillRedirectDelay(1000);
 await optionsPage.clickSave();
 
 // Open new tab the normal way (simulates user pressing Ctrl+T / Cmd+T)
 // Chrome automatically loads extension's newtab.html due to chrome_url_overrides
 const newTab = await context.newPage();
-await newTab.goto('chrome://newtab'); // Chrome redirects to extension's newtab.html
+await newTab.goto("chrome://newtab"); // Chrome redirects to extension's newtab.html
 
 // Verify redirect occurs after delay
-await newTab.waitForURL('https://example.com', { timeout: 2000 });
-expect(newTab.url()).toBe('https://example.com');
+await newTab.waitForURL("https://example.com", { timeout: 2000 });
+expect(newTab.url()).toBe("https://example.com");
 ```
 
 **Note:** When testing Chrome extensions with `chrome_url_overrides`, opening `chrome://newtab` will automatically load the extension's newtab.html page. This simulates the real user experience of opening a new tab.
@@ -350,16 +353,13 @@ expect(newTab.url()).toBe('https://example.com');
 // playwright.config.ts
 export default defineConfig({
   // Generate HTML report
-  reporter: [
-    ['html'],
-    ['json', { outputFile: 'test-results/results.json' }],
-  ],
+  reporter: [["html"], ["json", { outputFile: "test-results/results.json" }]],
 
   // Capture screenshots on failure
   use: {
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-    trace: 'retain-on-failure',
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+    trace: "retain-on-failure",
   },
 });
 ```

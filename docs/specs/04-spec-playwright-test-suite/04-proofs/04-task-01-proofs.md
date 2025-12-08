@@ -74,26 +74,23 @@ $ ls -la tsconfig.json
 File exists at project root with basic configuration:
 
 ```typescript
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: "./tests",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: [
-    ['html'],
-    ['json', { outputFile: 'test-results/results.json' }],
-  ],
+  reporter: [["html"], ["json", { outputFile: "test-results/results.json" }]],
   use: {
     actionTimeout: 0,
-    trace: 'on-first-retry',
+    trace: "on-first-retry",
   },
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] },
     },
   ],
 });
@@ -111,16 +108,22 @@ $ ls -la playwright.config.ts
 File exists with extension fixtures:
 
 ```typescript
-import { test as base, expect, chromium, BrowserContext, Page } from '@playwright/test';
-import * as path from 'path';
-import { existsSync } from 'fs';
+import {
+  test as base,
+  expect,
+  chromium,
+  BrowserContext,
+  Page,
+} from "@playwright/test";
+import * as path from "path";
+import { existsSync } from "fs";
 
-const pathToExtension = path.join(__dirname, '..');
+const pathToExtension = path.join(__dirname, "..");
 
 export const test = base.extend<ExtensionFixtures>({
   context: async ({}, use) => {
-    const context = await chromium.launchPersistentContext('', {
-      channel: 'chromium',
+    const context = await chromium.launchPersistentContext("", {
+      channel: "chromium",
       headless: false,
       args: [
         `--disable-extensions-except=${pathToExtension}`,
@@ -132,19 +135,27 @@ export const test = base.extend<ExtensionFixtures>({
   },
   extensionId: async ({ context }, use) => {
     const [serviceWorker] = await Promise.all([
-      context.waitForEvent('serviceworker'),
+      context.waitForEvent("serviceworker"),
     ]);
     const serviceWorkerUrl = serviceWorker.url();
-    const extensionIdMatch = serviceWorkerUrl.match(/chrome-extension:\/\/([a-z]{32})/);
+    const extensionIdMatch = serviceWorkerUrl.match(
+      /chrome-extension:\/\/([a-z]{32})/
+    );
     if (!extensionIdMatch) {
-      throw new Error('Could not extract extension ID from service worker URL');
+      throw new Error("Could not extract extension ID from service worker URL");
     }
     const extensionId = extensionIdMatch[1];
     await use(extensionId);
   },
-  setStorage: async ({ context }, use) => { /* ... */ },
-  getStorage: async ({ context }, use) => { /* ... */ },
-  clearStorage: async ({ context }, use) => { /* ... */ },
+  setStorage: async ({ context }, use) => {
+    /* ... */
+  },
+  getStorage: async ({ context }, use) => {
+    /* ... */
+  },
+  clearStorage: async ({ context }, use) => {
+    /* ... */
+  },
 });
 
 export { expect };
@@ -163,12 +174,12 @@ File exists with test URL constants:
 
 ```typescript
 export const TEST_URLS = {
-  EXAMPLE_COM: 'https://example.com',
-  HTTPBIN_ORG: 'https://httpbin.org',
-  GOOGLE_COM: 'https://www.google.com',
-  HTTPSTAT_US: 'https://httpstat.us',
-  CHROME_VERSION: 'chrome://version',
-  JSONPLACEHOLDER: 'https://jsonplaceholder.typicode.com',
+  EXAMPLE_COM: "https://example.com",
+  HTTPBIN_ORG: "https://httpbin.org",
+  GOOGLE_COM: "https://www.google.com",
+  HTTPSTAT_US: "https://httpstat.us",
+  CHROME_VERSION: "chrome://version",
+  JSONPLACEHOLDER: "https://jsonplaceholder.typicode.com",
 } as const;
 ```
 
@@ -246,16 +257,15 @@ playwright/.cache/
 
 ## Verification Summary
 
-✅ `package.json` exists with Playwright and TypeScript dependencies  
-✅ `tsconfig.json` exists with Playwright-compatible configuration  
-✅ `playwright.config.ts` exists with Chromium browser configuration  
-✅ `tests/fixtures.ts` exists with extension context and storage helper fixtures  
-✅ `tests/test-data.ts` exists with test URL constants  
-✅ `npx playwright test --list` runs without configuration errors  
-✅ TypeScript compilation succeeds for fixtures  
-✅ Dependencies installed successfully  
-✅ Directory structure created  
-✅ `.gitignore` updated with Playwright artifacts  
+✅ `package.json` exists with Playwright and TypeScript dependencies
+✅ `tsconfig.json` exists with Playwright-compatible configuration
+✅ `playwright.config.ts` exists with Chromium browser configuration
+✅ `tests/fixtures.ts` exists with extension context and storage helper fixtures
+✅ `tests/test-data.ts` exists with test URL constants
+✅ `npx playwright test --list` runs without configuration errors
+✅ TypeScript compilation succeeds for fixtures
+✅ Dependencies installed successfully
+✅ Directory structure created
+✅ `.gitignore` updated with Playwright artifacts
 
 All proof artifacts demonstrate that Task 1.0 has been successfully completed.
-

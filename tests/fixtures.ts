@@ -1,13 +1,19 @@
-import { test as base, expect, chromium, BrowserContext, Page } from '@playwright/test';
-import * as path from 'path';
-import { existsSync } from 'fs';
+import {
+  test as base,
+  expect,
+  chromium,
+  BrowserContext,
+  Page,
+} from "@playwright/test";
+import * as path from "path";
+import { existsSync } from "fs";
 
 // Resolve extension path (one level up from tests directory)
-const pathToExtension = path.join(__dirname, '..');
+const pathToExtension = path.join(__dirname, "..");
 
 // Verify manifest exists
-if (!existsSync(path.join(pathToExtension, 'manifest.json'))) {
-  throw new Error('Extension manifest.json not found at: ' + pathToExtension);
+if (!existsSync(path.join(pathToExtension, "manifest.json"))) {
+  throw new Error("Extension manifest.json not found at: " + pathToExtension);
 }
 
 // Define fixtures type
@@ -23,8 +29,8 @@ type ExtensionFixtures = {
 export const test = base.extend<ExtensionFixtures>({
   // Context fixture: loads Chrome extension
   context: async ({}, use) => {
-    const context = await chromium.launchPersistentContext('', {
-      channel: 'chromium',
+    const context = await chromium.launchPersistentContext("", {
+      channel: "chromium",
       headless: false, // Extensions require non-headless mode
       args: [
         `--disable-extensions-except=${pathToExtension}`,
@@ -41,16 +47,21 @@ export const test = base.extend<ExtensionFixtures>({
   extensionId: async ({ context }, use) => {
     // Wait for service worker to be available
     const [serviceWorker] = await Promise.all([
-      context.waitForEvent('serviceworker'),
+      context.waitForEvent("serviceworker"),
     ]);
 
     // Get extension ID from service worker URL
     // Service worker URL format: chrome-extension://<extension-id>/service-worker.js
     const serviceWorkerUrl = serviceWorker.url();
-    const extensionIdMatch = serviceWorkerUrl.match(/chrome-extension:\/\/([a-z]{32})/);
-    
+    const extensionIdMatch = serviceWorkerUrl.match(
+      /chrome-extension:\/\/([a-z]{32})/
+    );
+
     if (!extensionIdMatch) {
-      throw new Error('Could not extract extension ID from service worker URL: ' + serviceWorkerUrl);
+      throw new Error(
+        "Could not extract extension ID from service worker URL: " +
+          serviceWorkerUrl
+      );
     }
 
     const extensionId = extensionIdMatch[1];
@@ -63,7 +74,7 @@ export const test = base.extend<ExtensionFixtures>({
       // Get any page from context to access chrome.storage API
       const pages = context.pages();
       let page: Page;
-      
+
       if (pages.length > 0) {
         page = pages[0];
       } else {
@@ -87,7 +98,7 @@ export const test = base.extend<ExtensionFixtures>({
       // Get any page from context to access chrome.storage API
       const pages = context.pages();
       let page: Page;
-      
+
       if (pages.length > 0) {
         page = pages[0];
       } else {
@@ -111,7 +122,7 @@ export const test = base.extend<ExtensionFixtures>({
       // Get any page from context to access chrome.storage API
       const pages = context.pages();
       let page: Page;
-      
+
       if (pages.length > 0) {
         page = pages[0];
       } else {
@@ -131,4 +142,3 @@ export const test = base.extend<ExtensionFixtures>({
 });
 
 export { expect };
-

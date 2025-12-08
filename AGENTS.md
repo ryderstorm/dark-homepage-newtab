@@ -42,13 +42,13 @@ This document provides context and guidelines for AI assistants working with thi
 
 ## Key Files
 
-| File | Purpose |
-| --- | --- |
-| `manifest.json` | Chrome extension configuration and metadata |
-| `.pre-commit-config.yaml` | Pre-commit hooks for code quality |
-| `.github/workflows/ci.yml` | CI/CD pipeline configuration |
-| `.releaserc.toml` | Semantic versioning configuration |
-| `CONTRIBUTING.md` | Contribution guidelines and conventions |
+| File                       | Purpose                                     |
+| -------------------------- | ------------------------------------------- |
+| `manifest.json`            | Chrome extension configuration and metadata |
+| `.pre-commit-config.yaml`  | Pre-commit hooks for code quality           |
+| `.github/workflows/ci.yml` | CI/CD pipeline configuration                |
+| `.releaserc.toml`          | Semantic versioning configuration           |
+| `CONTRIBUTING.md`          | Contribution guidelines and conventions     |
 
 ## Quick Reference
 
