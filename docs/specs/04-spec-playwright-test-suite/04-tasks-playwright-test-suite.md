@@ -189,7 +189,7 @@
 - [x] 5.10 Write test case "should apply background color changes immediately" that changes color in options and verifies it applies to new tab page
 - [x] 5.11 Run `npx playwright test tests/e2e.spec.ts` and verify all tests pass
 
-### [~] 6.0 CI/CD Integration and Documentation
+### [x] 6.0 CI/CD Integration and Documentation
 
 #### 6.0 Proof Artifact(s)
 
