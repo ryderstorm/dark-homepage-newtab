@@ -81,16 +81,16 @@ Customize the background color of both the new tab page and options page.
 
 **Preset Colors Available**:
 
-- Midnight Blue (#191970)
-- Charcoal (#36454F)
-- Deep Purple (#2D1B3D)
-- Obsidian (#0B0B0B)
+- Light Grey (#666666)
+- Charcoal (#333333)
+- Royal Azure (#1d4ed8)
+- True Cobalt (#002078)
 - Dark Navy (#000080)
-- Dark Slate (#2F4F4F)
-- Shadow Black (#090909) - Default
-- Midnight (#000e34)
-- Dark Slate Gray (#2D2D2D)
-- Deep Indigo (#4B0082)
+- Midnight Blue (#191970)
+- Shadow Grey (#222227)
+- Dark Slate (#1a1a1a) - Default
+- Shadow Black (#090909)
+- Deep Black (#000000)
 
 ## Usage
 
