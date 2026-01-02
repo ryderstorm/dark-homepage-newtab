@@ -1,7 +1,7 @@
 {
   "name": "dark-homepage-newtab",
   "version": "0.1.0",
-  "description": "Dark new tab that loads my self-hosted homepage.dev dashboard.",
+  "description": "Shadow Tab - A sleek dark new tab page that redirects to your custom URL with customizable colors and timing.",
   "private": true,
   "type": "module",
   "scripts": {
