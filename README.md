@@ -30,7 +30,7 @@ Transform your new tab into a sleek, customizable dark workspace with Shadow Tab
 
 - **Customizable New Tab URL**: Set any URL to redirect to when opening a new tab
 - **Redirect Delay**: Configure delay (0-60000ms) before redirect, with optional loading animation
-- **Dark Theme**: Beautiful dark color scheme (#05060a background, #e5e5e5 text)
+- **Dark Theme**: Beautiful Shadow Tab color palette (#090909 Shadow Black background, #e5e5e5 text) with True Cobalt and Royal Azure accents
 
 ### Enhanced Features
 
@@ -38,7 +38,7 @@ Transform your new tab into a sleek, customizable dark workspace with Shadow Tab
 - **Loading Animation**: Smooth pulsing dot animation during redirect delays
 - **Color Customization**:
   - Native HTML5 color picker for background color selection
-  - 10 preset dark theme colors (Midnight Blue, Charcoal, Deep Purple, etc.)
+  - 10 preset colors featuring Shadow Tab palette (Shadow Black, Shadow Grey, True Cobalt, Royal Azure, and more)
   - Live preview on options page
   - Smooth color transitions
 - **Accessibility**: Full keyboard navigation and screen reader support with ARIA labels
