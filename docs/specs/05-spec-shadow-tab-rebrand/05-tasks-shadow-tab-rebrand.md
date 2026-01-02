@@ -33,7 +33,7 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 - `options.html` - Add favicon link
 - `favicon.ico` - Create new favicon file
 
-### [~] 2.0 CSS Variables Implementation and Color Palette Update
+### [x] 2.0 CSS Variables Implementation and Color Palette Update
 
 #### 2.0 Proof Artifact(s)
 
@@ -57,7 +57,7 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 - `newtab.html` - Verify styling applies correctly
 - `newtab.js` - Ensure no color conflicts in JavaScript
 
-### [ ] 3.0 Options Page Rebrand and Default Color Presets
+### [~] 3.0 Options Page Rebrand and Default Color Presets
 
 #### 3.0 Proof Artifact(s)
 
@@ -67,14 +67,14 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 
 #### 3.0 Tasks
 
-- [ ] 3.1 Add CSS custom properties to `options.css` with Shadow Tab color variables
-- [ ] 3.2 Replace all hardcoded colors in `options.css` with CSS variables
-- [ ] 3.3 Update `_PRESET_COLORS` array in `options.js` with new Shadow Tab palette
-- [ ] 3.4 Update preset color buttons in `options.html` to use new palette
-- [ ] 3.5 Update default color picker value to use new palette
-- [ ] 3.6 Test all color presets save and load correctly
-- [ ] 3.7 Verify favicon displays in browser tab
-- [ ] 3.8 Test form functionality with new colors
+- [x] 3.1 Add CSS custom properties to `options.css` with Shadow Tab color variables
+- [x] 3.2 Replace all hardcoded colors in `options.css` with CSS variables
+- [x] 3.3 Update `_PRESET_COLORS` array in `options.js` with new Shadow Tab palette
+- [x] 3.4 Update preset color buttons in `options.html` to use new palette
+- [x] 3.5 Update default color picker value to use new palette
+- [x] 3.6 Test all color presets save and load correctly
+- [x] 3.7 Verify favicon displays in browser tab
+- [x] 3.8 Test form functionality with new colors
 
 #### 3.0 Relevant Files
 

@@ -1,5 +1,40 @@
 :root {
   color-scheme: dark;
+
+  /* Shadow Tab Color Palette */
+    --shadow-primary: #1a1f2e;
+
+    /* Deep midnight blue - main background */
+    --shadow-secondary: #2d3748;
+
+    /* Slate blue - secondary elements */
+    --shadow-accent: #4a5568;
+
+    /* Medium slate - accents */
+    --shadow-text: #e2e8f0;
+
+    /* Light blue-gray - primary text */
+    --shadow-text-muted: #a0aec0;
+
+    /* Muted blue-gray - secondary text */
+    --shadow-error: #fc8181;
+
+    /* Soft red - error states */
+    --shadow-loading: #63b3ed;
+
+    /* Light blue - loading animation */
+    --shadow-border: #4a5568;
+
+    /* Medium slate - borders */
+    --shadow-input-bg: #2d3748;
+
+    /* Input background */
+    --shadow-input-border: #4a5568;
+
+    /* Input border */
+    --shadow-button-hover: #4a5568;
+
+    /* Button hover state */
 }
 
 html,
@@ -8,8 +43,8 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background: #05060a; /* very dark, no flash */
-  color: #e5e5e5;
+  background: var(--shadow-primary);
+    color: var(--shadow-text);
   font-family:
     system-ui,
     -apple-system,
@@ -36,7 +71,7 @@ h1 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 32px;
-  color: #e5e5e5;
+  color: var(--shadow-text);
 }
 
 .form-group {
@@ -48,7 +83,7 @@ label {
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 8px;
-  color: #e5e5e5;
+  color: var(--shadow-text);
 }
 
 .url-input-wrapper {
@@ -60,7 +95,7 @@ label {
 .url-validation-message {
   margin-top: 8px;
   font-size: 13px;
-  color: #888;
+  color: var(--shadow-text-muted);
   min-height: 20px;
   display: flex;
   align-items: center;
@@ -68,22 +103,22 @@ label {
 }
 
 .url-validation-message.validating {
-  color: #888;
+  color: var(--shadow-text-muted);
 }
 
 .url-validation-message.validating::before {
   content: "";
   width: 12px;
   height: 12px;
-  border: 2px solid #2d2e32;
-  border-top-color: #e5e5e5;
+  border: 2px solid var(--shadow-border);
+    border-top-color: var(--shadow-text);
   border-radius: 50%;
   display: inline-block;
   animation: spin 0.8s linear infinite;
 }
 
 .url-validation-message.success {
-  color: #48bb78;
+  color: var(--shadow-loading);
 }
 
 .url-validation-message:empty {
@@ -100,7 +135,7 @@ input[type="color"] {
   width: 48px;
   height: 48px;
   padding: 0;
-  border: 1px solid #2d2e32;
+  border: 1px solid var(--shadow-input-border);
   border-radius: 4px;
   cursor: pointer;
   background: transparent;
@@ -114,12 +149,12 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 }
 
 input[type="color"]::-webkit-color-swatch {
-  border: 1px solid #2d2e32;
+  border: 1px solid var(--shadow-input-border);
   border-radius: 4px;
 }
 
 input[type="color"]::-moz-color-swatch {
-  border: 1px solid #2d2e32;
+  border: 1px solid var(--shadow-input-border);
   border-radius: 4px;
 }
 
@@ -134,10 +169,10 @@ input[type="number"] {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  background: #1a1b1f;
-  border: 1px solid #2d2e32;
+  background: var(--shadow-input-bg);
+    border: 1px solid var(--shadow-input-border);
   border-radius: 4px;
-  color: #e5e5e5;
+  color: var(--shadow-text);
   box-sizing: border-box;
 }
 
@@ -159,7 +194,7 @@ input[type="number"] {
   width: 100%;
   height: 40px;
   padding: 0;
-  border: 2px solid #2d2e32;
+  border: 2px solid var(--shadow-border);
   border-radius: 4px;
   cursor: pointer;
   transition:
@@ -169,7 +204,7 @@ input[type="number"] {
 
 .preset-color-label {
   font-size: 11px;
-  color: #888;
+  color: var(--shadow-text-muted);
   text-align: center;
   line-height: 1.2;
   overflow-wrap: break-word;
@@ -177,7 +212,7 @@ input[type="number"] {
 
 .preset-color-btn:hover {
   transform: scale(1.05);
-  border-color: #4a9eff;
+  border-color: var(--shadow-loading);
 }
 
 .preset-color-btn:active {
@@ -185,21 +220,21 @@ input[type="number"] {
 }
 
 .preset-color-btn:focus {
-  outline: 2px solid #4a9eff;
+  outline: 2px solid var(--shadow-loading);
   outline-offset: 2px;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="color"]:focus {
-  outline: 2px solid #4a9eff;
+  outline: 2px solid var(--shadow-loading);
   outline-offset: 2px;
-  border-color: #4a9eff;
+  border-color: var(--shadow-loading);
 }
 
 input[type="text"]:invalid,
 input[type="number"]:invalid {
-  border-color: #e53e3e;
+  border-color: var(--shadow-error);
 }
 
 button {
@@ -212,7 +247,7 @@ button {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  background: #4a9eff;
+  background: var(--shadow-loading);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -221,22 +256,22 @@ button {
 }
 
 button:hover {
-  background: #3a8eef;
+  background: var(--shadow-button-hover);
 }
 
 button:active {
-  background: #2a7edf;
+  background: var(--shadow-accent);
 }
 
 button:focus {
-  outline: 2px solid #4a9eff;
+  outline: 2px solid var(--shadow-loading);
   outline-offset: 2px;
 }
 
 .error-message {
   margin-top: 8px;
   font-size: 13px;
-  color: #e53e3e;
+  color: var(--shadow-error);
   min-height: 20px;
   display: none;
 }
@@ -248,7 +283,7 @@ button:focus {
 .success-message {
   margin-top: 8px;
   font-size: 13px;
-  color: #48bb78;
+  color: var(--shadow-loading);
   min-height: 20px;
   display: none;
 }
@@ -260,9 +295,9 @@ button:focus {
 .version-footer {
   margin-top: 32px;
   padding-top: 16px;
-  border-top: 1px solid #2d2e32;
+  border-top: 1px solid var(--shadow-border);
   font-size: 12px;
-  color: #888;
+  color: var(--shadow-text-muted);
   text-align: center;
 }
 
