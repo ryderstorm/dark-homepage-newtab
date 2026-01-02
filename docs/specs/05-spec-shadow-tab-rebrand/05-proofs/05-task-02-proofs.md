@@ -7,16 +7,16 @@
 ```css
 :root {
   color-scheme: dark;
-  
+
   /* Shadow Tab Color Palette */
-  --shadow-primary: #1a1f2e;    /* Deep midnight blue - main background */
-  --shadow-secondary: #2d3748;  /* Slate blue - secondary elements */
-  --shadow-accent: #4a5568;     /* Medium slate - accents */
-  --shadow-text: #e2e8f0;       /* Light blue-gray - primary text */
+  --shadow-primary: #1a1f2e; /* Deep midnight blue - main background */
+  --shadow-secondary: #2d3748; /* Slate blue - secondary elements */
+  --shadow-accent: #4a5568; /* Medium slate - accents */
+  --shadow-text: #e2e8f0; /* Light blue-gray - primary text */
   --shadow-text-muted: #a0aec0; /* Muted blue-gray - secondary text */
-  --shadow-error: #fc8181;      /* Soft red - error states */
-  --shadow-loading: #63b3ed;    /* Light blue - loading animation */
-  --shadow-border: #4a5568;     /* Medium slate - borders */
+  --shadow-error: #fc8181; /* Soft red - error states */
+  --shadow-loading: #63b3ed; /* Light blue - loading animation */
+  --shadow-border: #4a5568; /* Medium slate - borders */
 }
 ```
 
@@ -65,7 +65,7 @@ All CSS variables include descriptive comments explaining their purpose and visu
 ```text
 Shadow Tab Color Contrast Analysis:
 Primary Background (#1a1f2e) vs Text (#e2e8f0): High contrast (14.3:1) - AAA compliant
-Primary Background (#1a1f2e) vs Loading (#63b3ed): Good contrast (7.8:1) - AA compliant  
+Primary Background (#1a1f2e) vs Loading (#63b3ed): Good contrast (7.8:1) - AA compliant
 Primary Background (#1a1f2e) vs Error (#fc8181): Good contrast (6.2:1) - AA compliant
 All combinations meet or exceed WCAG AA standards
 ```

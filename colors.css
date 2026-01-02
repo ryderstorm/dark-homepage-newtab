@@ -2,12 +2,12 @@
   color-scheme: dark;
 
   /* Shadow Tab Color Palette - from spec */
-  --black: #090909ff;         /* Black - Primary background color */
-  --shadow-grey: #222227ff;    /* Shadow Grey - Secondary background color */
-  --true-cobalt: #002078ff;    /* True Cobalt - Interactive elements */
-  --royal-azure: #1d4ed8ff;    /* Royal Azure - Hover states and highlights */
-  --shadow-text: #e5e5e5;      /* Text color (maintained for readability) */
-  
+  --black: #090909ff; /* Black - Primary background color */
+  --shadow-grey: #222227ff; /* Shadow Grey - Secondary background color */
+  --true-cobalt: #002078ff; /* True Cobalt - Interactive elements */
+  --royal-azure: #1d4ed8ff; /* Royal Azure - Hover states and highlights */
+  --shadow-text: #e5e5e5; /* Text color (maintained for readability) */
+
   /* Additional semantic color variables for consistency */
   --shadow-primary: var(--black);
   --shadow-secondary: var(--shadow-grey);
@@ -15,8 +15,8 @@
   --shadow-hover: var(--royal-azure);
   --shadow-text-primary: var(--shadow-text);
   --shadow-text-muted: #a0aec0; /* Muted text for secondary elements */
-  --shadow-error: #fc8181;      /* Error states */
-  --shadow-border: #4a5568;     /* Borders */
+  --shadow-error: #fc8181; /* Error states */
+  --shadow-border: #4a5568; /* Borders */
   --shadow-input-bg: var(--shadow-grey);
   --shadow-input-border: var(--shadow-border);
   --shadow-button-hover: var(--shadow-hover);

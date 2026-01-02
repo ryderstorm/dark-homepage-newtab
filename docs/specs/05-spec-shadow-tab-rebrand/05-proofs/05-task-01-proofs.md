@@ -82,6 +82,7 @@ $ ls -la favicon.ico
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="options.css" />
   </head>
+</html>
 ```
 
 ### Palette.png Copied to Documentation

@@ -28,7 +28,7 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 #### 1.0 Relevant Files
 
 - `manifest.json` - Update icon paths
-- `assets/icons/` - New directory for PNG exports  
+- `assets/icons/` - New directory for PNG exports
 - `icon.svg` - Move to root directory
 - `options.html` - Add favicon link
 - `favicon.ico` - Create new favicon file

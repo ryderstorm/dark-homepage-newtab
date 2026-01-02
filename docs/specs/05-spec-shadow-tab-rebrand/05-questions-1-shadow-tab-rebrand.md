@@ -20,7 +20,7 @@ How should the new colors map to UI elements?
 - [ ] (B) **Black (#090909)** for text, **Shadow Grey (#222227)** for backgrounds, **True Cobalt (#002078)** for primary actions, **Royal Azure (#1d4ed8)** for secondary actions
 - [x] (C) **Use existing mapping** - Keep current color roles but replace with new palette colors
 - [ ] (D) **I'll specify exact mappings** in the notes below
-- [ ] (E) Other (describe): 
+- [ ] (E) Other (describe):
 
 ## 3. Icon Integration
 
@@ -91,4 +91,4 @@ What screenshots or evidence will demonstrate this feature is complete?
 
 Please add any specific requirements, preferences, or additional context below:
 
-*Your notes here...*
+_Your notes here..._

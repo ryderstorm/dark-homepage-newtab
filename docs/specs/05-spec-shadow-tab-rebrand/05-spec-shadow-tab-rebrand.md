@@ -22,7 +22,7 @@ As a user of dark-mode dashboards and self-hosted tools, I want a sleek, profess
 
 - Replace all existing colors in the extension with the new Shadow Tab palette:
   - Black: `#090909ff` (primary backgrounds)
-  - Shadow Grey: `#222227ff` (secondary backgrounds/accents)  
+  - Shadow Grey: `#222227ff` (secondary backgrounds/accents)
   - True Cobalt: `#002078ff` (interactive elements)
   - Royal Azure: `#1d4ed8ff` (hover states/highlights)
 - Apply colors consistently across new tab page, options page, and any UI elements
@@ -63,11 +63,11 @@ As a user of dark-mode dashboards and self-hosted tools, I want a sleek, profess
 
   ```css
   :root {
-    --black: #090909ff;         /* Black - Primary background color */
-    --shadow-grey: #222227ff;    /* Shadow Grey - Secondary background color */
-    --true-cobalt: #002078ff;    /* True Cobalt - Interactive elements */
-    --royal-azure: #1d4ed8ff;    /* Royal Azure - Hover states and highlights */
-    --shadow-text: #e5e5e5;      /* Text color (maintained for readability) */
+    --black: #090909ff; /* Black - Primary background color */
+    --shadow-grey: #222227ff; /* Shadow Grey - Secondary background color */
+    --true-cobalt: #002078ff; /* True Cobalt - Interactive elements */
+    --royal-azure: #1d4ed8ff; /* Royal Azure - Hover states and highlights */
+    --shadow-text: #e5e5e5; /* Text color (maintained for readability) */
   }
   ```
 
@@ -100,7 +100,7 @@ As a user of dark-mode dashboards and self-hosted tools, I want a sleek, profess
 - Smooth transition from dark background to target URL
 - No white flash or visual artifacts
 
-### DU-2: Options Page Rebrand  
+### DU-2: Options Page Rebrand
 
 - Fully redesigned options interface with Shadow Tab branding
 - All interactive elements use new color scheme
@@ -122,7 +122,7 @@ As a user of dark-mode dashboards and self-hosted tools, I want a sleek, profess
 - **Content**: Shows new tab page with Shadow Tab colors, loading animation, and smooth redirect
 - **Validation**: All colors match specified palette, no old branding visible
 
-### PA-2: Options Page Screenshot  
+### PA-2: Options Page Screenshot
 
 - **Purpose**: Show rebranded settings interface with new colors and favicon
 - **Content**: Complete options page displaying Shadow Tab branding throughout
@@ -148,7 +148,7 @@ As a user of dark-mode dashboards and self-hosted tools, I want a sleek, profess
 - [ ] No old branding colors or references remain in user-facing elements
 - [ ] Icons integrate seamlessly with Chrome's interface design
 
-### Functional Preservation  
+### Functional Preservation
 
 - [ ] All existing features work exactly as before rebrand
 - [ ] Settings and user preferences are preserved during update
@@ -173,11 +173,11 @@ As a user of dark-mode dashboards and self-hosted tools, I want a sleek, profess
 ```css
 /* New Shadow Tab Color Mappings with CSS Variables */
 :root {
-  --black: #090909ff;         /* Black - Primary background - was #05060a */
-  --shadow-grey: #222227ff;    /* Shadow Grey - Secondary background - was #1a1a1a */  
-  --true-cobalt: #002078ff;    /* True Cobalt - Accent color - was #007acc */
-  --royal-azure: #1d4ed8ff;    /* Royal Azure - Hover color - was #005a9e */
-  --shadow-text: #e5e5e5;      /* Text color - maintained for readability */
+  --black: #090909ff; /* Black - Primary background - was #05060a */
+  --shadow-grey: #222227ff; /* Shadow Grey - Secondary background - was #1a1a1a */
+  --true-cobalt: #002078ff; /* True Cobalt - Accent color - was #007acc */
+  --royal-azure: #1d4ed8ff; /* Royal Azure - Hover color - was #005a9e */
+  --shadow-text: #e5e5e5; /* Text color - maintained for readability */
 }
 
 /* Implementation example */
@@ -203,7 +203,7 @@ body {
 ### File Update Checklist
 
 - [ ] `manifest.json` - name, description, icons
-- [ ] `newtab.html` - title, meta descriptions  
+- [ ] `newtab.html` - title, meta descriptions
 - [ ] `newtab.css` - **implement CSS variables** with color comments, update all color values
 - [ ] `options.html` - title, interface text
 - [ ] `options.css` - all color values and styles
@@ -226,7 +226,7 @@ body {
 - Marketing copy and messaging (provided)
 - **Color palette reference image** (`palette.png`) - **include in documentation**
 
-### Technical Dependencies  
+### Technical Dependencies
 
 - Existing CSS architecture and styling approach
 - Current FOUC elimination implementation
@@ -240,7 +240,7 @@ body {
 - **Risk**: Inconsistent color application across different elements
 - **Mitigation**: Systematic replacement of all color values using CSS variables where possible
 
-### Functionality Preservation Risks  
+### Functionality Preservation Risks
 
 - **Risk**: Accidental changes to core functionality during rebrand
 - **Mitigation**: Comprehensive testing of all features before and after visual changes
@@ -258,7 +258,7 @@ body {
 - Test icon display across different Chrome themes
 - Validate text readability with new color combinations
 
-### Functional Tests  
+### Functional Tests
 
 - Confirm all settings save and load correctly
 - Test redirect functionality with various URLs

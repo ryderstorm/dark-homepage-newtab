@@ -7,17 +7,17 @@
 ```css
 :root {
   color-scheme: dark;
-  
+
   /* Shadow Tab Color Palette */
-  --shadow-primary: #1a1f2e;    /* Deep midnight blue - main background */
-  --shadow-secondary: #2d3748;  /* Slate blue - secondary elements */
-  --shadow-accent: #4a5568;     /* Medium slate - accents */
-  --shadow-text: #e2e8f0;       /* Light blue-gray - primary text */
+  --shadow-primary: #1a1f2e; /* Deep midnight blue - main background */
+  --shadow-secondary: #2d3748; /* Slate blue - secondary elements */
+  --shadow-accent: #4a5568; /* Medium slate - accents */
+  --shadow-text: #e2e8f0; /* Light blue-gray - primary text */
   --shadow-text-muted: #a0aec0; /* Muted blue-gray - secondary text */
-  --shadow-error: #fc8181;      /* Soft red - error states */
-  --shadow-loading: #63b3ed;    /* Light blue - loading animation */
-  --shadow-border: #4a5568;     /* Medium slate - borders */
-  --shadow-input-bg: #2d3748;   /* Input background */
+  --shadow-error: #fc8181; /* Soft red - error states */
+  --shadow-loading: #63b3ed; /* Light blue - loading animation */
+  --shadow-border: #4a5568; /* Medium slate - borders */
+  --shadow-input-bg: #2d3748; /* Input background */
   --shadow-input-border: #4a5568; /* Input border */
   --shadow-button-hover: #4a5568; /* Button hover state */
 }
