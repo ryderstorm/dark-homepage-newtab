@@ -57,7 +57,7 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 - `newtab.html` - Verify styling applies correctly
 - `newtab.js` - Ensure no color conflicts in JavaScript
 
-### [~] 3.0 Options Page Rebrand and Default Color Presets
+### [x] 3.0 Options Page Rebrand and Default Color Presets
 
 #### 3.0 Proof Artifact(s)
 
@@ -83,7 +83,7 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 - `options.html` - Update preset color buttons and default values
 - `favicon.ico` - Reference in HTML head
 
-### [ ] 4.0 Text Content and Marketing Integration
+### [x] 4.0 Text Content and Marketing Integration
 
 #### 4.0 Proof Artifact(s)
 

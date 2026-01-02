@@ -1,6 +1,6 @@
-# Dark New Tab Homepage
+# Shadow Tab
 
-A Chrome extension that replaces the default new tab page with a customizable dark-themed homepage that redirects to your configured URL.
+Transform your new tab into a sleek, customizable dark workspace with Shadow Tab's modern design and powerful redirect capabilities.
 
 ## Installation
 

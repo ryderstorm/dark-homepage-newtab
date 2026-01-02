@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Dark New Tab Homepage",
-  "description": "Dark new tab that loads my self-hosted homepage.dev dashboard.",
+  "name": "Shadow Tab",
+  "description": "Transform your new tab into a sleek, customizable dark workspace with Shadow Tab's modern design and powerful redirect capabilities.",
   "version": "0.1.1",
   "permissions": ["storage"],
   "chrome_url_overrides": {

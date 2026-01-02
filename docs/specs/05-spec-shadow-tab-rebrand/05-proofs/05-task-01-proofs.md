@@ -3,6 +3,7 @@
 ## Implementation Evidence
 
 ### Directory Structure Created
+
 ```bash
 $ ls -la assets/icons/
 total 56
@@ -20,18 +21,21 @@ drwxr-xr-x 3 damien damien 4096 Jan  2 00:47 ..
 ```
 
 ### SVG Icon Moved to Root
+
 ```bash
 $ ls -la icon.svg
 -rw-r--r--1 damien damien 2799 Jan  2 00:47 icon.svg
 ```
 
 ### Favicon Created
+
 ```bash
 $ ls -la favicon.ico
 -rw-r--r--1 damien damien 4286 Jan  2 00:47 favicon.ico
 ```
 
 ### Manifest.json Updated with Icon Paths
+
 ```json
 {
   "manifest_version": 3,
@@ -64,6 +68,7 @@ $ ls -la favicon.ico
 ```
 
 ### Options.html Updated with Favicon
+
 ```html
 <!doctype html>
 <html lang="en">
@@ -80,12 +85,14 @@ $ ls -la favicon.ico
 ```
 
 ### Palette.png Copied to Documentation
+
 ```bash
 $ ls -la docs/specs/05-spec-shadow-tab-rebrand/palette.png
 -rw-r--r--1 damien damien 23763 Jan  2 00:47 docs/specs/05-spec-shadow-tab-rebrand/palette.png
 ```
 
 ### Manifest Validation
+
 ```bash
 $ python3 -m json.tool manifest.json > /dev/null
 $ echo $?
@@ -93,7 +100,9 @@ $ echo $?
 ```
 
 ### Chrome Extension Validation
+
 The manifest.json file has been validated and passes Chrome extension requirements:
+
 - Valid JSON syntax
 - All required fields present
 - Icon paths correctly reference existing files
