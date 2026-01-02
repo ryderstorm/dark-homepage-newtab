@@ -1,5 +1,31 @@
 :root {
   color-scheme: dark;
+
+  /* Shadow Tab Color Palette */
+    --shadow-primary: #1a1f2e;
+
+    /* Deep midnight blue - main background */
+    --shadow-secondary: #2d3748;
+
+    /* Slate blue - secondary elements */
+    --shadow-accent: #4a5568;
+
+    /* Medium slate - accents */
+    --shadow-text: #e2e8f0;
+
+    /* Light blue-gray - primary text */
+    --shadow-text-muted: #a0aec0;
+
+    /* Muted blue-gray - secondary text */
+    --shadow-error: #fc8181;
+
+    /* Soft red - error states */
+    --shadow-loading: #63b3ed;
+
+    /* Light blue - loading animation */
+    --shadow-border: #4a5568;
+
+    /* Medium slate - borders */
 }
 
 html,
@@ -8,8 +34,10 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background: #05060a; /* very dark, no flash */
-  color: #e5e5e5;
+  background: var(--shadow-primary);
+
+    /* Shadow Tab primary background */
+    color: var(--shadow-text);
 }
 
 body {
@@ -37,7 +65,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #e5e5e5;
+  background-color: var(--shadow-loading);
   opacity: 0.7;
   animation: pulse-dot 1.4s ease-in-out infinite;
 }
@@ -69,7 +97,7 @@ body {
 
 .error-message {
   font-size: 14px;
-  color: #e53e3e;
+  color: var(--shadow-error);
   text-align: center;
   padding: 20px;
   display: none;

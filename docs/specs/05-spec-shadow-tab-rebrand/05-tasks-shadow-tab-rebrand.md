@@ -6,7 +6,7 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 
 ## Tasks
 
-### [ ] 1.0 Asset Organization and Icon Integration
+### [x] 1.0 Asset Organization and Icon Integration
 
 #### 1.0 Proof Artifact(s)
 
@@ -33,7 +33,7 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 - `options.html` - Add favicon link
 - `favicon.ico` - Create new favicon file
 
-### [ ] 2.0 CSS Variables Implementation and Color Palette Update
+### [~] 2.0 CSS Variables Implementation and Color Palette Update
 
 #### 2.0 Proof Artifact(s)
 
@@ -43,13 +43,13 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 
 #### 2.0 Tasks
 
-- [ ] 2.1 Add CSS custom properties to `newtab.css` with Shadow Tab color variables
-- [ ] 2.2 Replace all hardcoded colors in `newtab.css` with CSS variables
-- [ ] 2.3 Update loading animation colors to use new palette
-- [ ] 2.4 Add color name comments for maintainability
-- [ ] 2.5 Test color contrast ratios meet WCAG AA standards
-- [ ] 2.6 Verify FOUC elimination technique still works with new colors
-- [ ] 2.7 Run CSS linting to ensure code quality
+- [x] 2.1 Add CSS custom properties to `newtab.css` with Shadow Tab color variables
+- [x] 2.2 Replace all hardcoded colors in `newtab.css` with CSS variables
+- [x] 2.3 Update loading animation colors to use new palette
+- [x] 2.4 Add color name comments for maintainability
+- [x] 2.5 Test color contrast ratios meet WCAG AA standards
+- [x] 2.6 Verify FOUC elimination technique still works with new colors
+- [x] 2.7 Run CSS linting to ensure code quality
 
 #### 2.0 Relevant Files
 
