@@ -69,7 +69,7 @@ test.describe("Extension Installation and Setup", () => {
     expect(response?.status()).toBe(200);
 
     // Verify page title
-    await expect(page).toHaveTitle(/New Tab/i);
+    await expect(page).toHaveTitle(/Shadow Tab/i);
 
     // Verify key elements exist (loading might be hidden initially)
     await expect(page.locator("#loading")).toBeAttached();
@@ -88,7 +88,7 @@ test.describe("Extension Installation and Setup", () => {
     expect(response?.status()).toBe(200);
 
     // Verify page title
-    await expect(page).toHaveTitle(/Shadow Tab Settings/i);
+    await expect(page).toHaveTitle(/Shadow Tab - Options/i);
 
     // Verify key form elements exist
     await expect(page.locator("#url-input")).toBeVisible();
