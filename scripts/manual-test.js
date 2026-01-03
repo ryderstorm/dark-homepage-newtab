@@ -9,6 +9,7 @@ import { chromium } from "@playwright/test";
 import * as path from "path";
 import { existsSync, mkdirSync } from "fs";
 import { fileURLToPath, pathToFileURL } from "url";
+import process from "node:process";
 
 // Resolve extension path
 const __filename = fileURLToPath(import.meta.url);
@@ -27,7 +28,7 @@ async function startManualTesting() {
   const userDataDir = path.join(pathToExtension, ".temp", "playwright-profile");
   mkdirSync(userDataDir, { recursive: true });
   console.log("👤 Playwright profile dir:", userDataDir);
-  
+
   let context = null;
 
   try {
@@ -51,7 +52,9 @@ async function startManualTesting() {
     console.log("✅ Browser launched with extension loaded");
     console.log("🔧 Testing tips:");
     console.log("   - Open a new tab to see the extension in action");
-    console.log("   - Navigate to chrome://extensions to see extension details");
+    console.log(
+      "   - Navigate to chrome://extensions to see extension details"
+    );
     console.log("   - Right-click the extension icon to access options");
     console.log("   - Use Chrome DevTools to debug extension pages");
     console.log("");
@@ -73,19 +76,23 @@ async function startManualTesting() {
 
     if (extensionId) {
       console.log(`   - New Tab: chrome://newtab`);
-      console.log(`   - Options: chrome-extension://${extensionId}/options.html`);
+      console.log(
+        `   - Options: chrome-extension://${extensionId}/options.html`
+      );
       console.log(`   - Extension ID: ${extensionId}`);
     } else {
       console.log("   - New Tab: chrome://newtab");
-      console.log("   - Options: chrome-extension://[EXTENSION_ID]/options.html");
+      console.log(
+        "   - Options: chrome-extension://[EXTENSION_ID]/options.html"
+      );
       console.log("   (Extension ID will be shown in Chrome://extensions)");
     }
-    
+
     console.log("");
     console.log("🛑 Press Ctrl+C to close the browser and exit");
 
     // Keep the process running
-    process.on('SIGINT', async () => {
+    process.on("SIGINT", async () => {
       console.log("\n🔄 Shutting down...");
       if (context) {
         await context.close();
@@ -95,7 +102,6 @@ async function startManualTesting() {
 
     // Wait indefinitely until interrupted
     await new Promise(() => {});
-
   } catch (error) {
     console.error("❌ Failed to start manual testing:", error);
     if (context) {
