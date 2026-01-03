@@ -39,8 +39,8 @@ $ ls -la favicon.ico
 ```json
 {
   "manifest_version": 3,
-  "name": "Dark New Tab Homepage",
-  "description": "Dark new tab that loads my self-hosted homepage.dev dashboard.",
+  "name": "Shadow Tab",
+  "description": "Shadow Tab - A sleek dark new tab page that redirects to your custom URL.",
   "version": "0.1.1",
   "permissions": ["storage"],
   "chrome_url_overrides": {
@@ -74,7 +74,7 @@ $ ls -la favicon.ico
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Dark New Tab Homepage - Options</title>
+    <title>Shadow Tab - Options</title>
 
     <!-- Hint Chrome that this is dark UI -->
     <meta name="color-scheme" content="dark" />

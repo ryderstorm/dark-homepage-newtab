@@ -2,7 +2,7 @@
 
 ## Introduction/Overview
 
-This specification defines the implementation of a comprehensive Playwright automated test suite for the Dark New Tab Homepage Chrome extension. The test suite will ensure the extension's functionality, installation, and prevent regressions as the application evolves. The implementation follows a progressive coverage approach, starting with critical paths and expanding incrementally, using modern Playwright best practices and the Page Object Model pattern for maintainability.
+This specification defines the implementation of a comprehensive Playwright automated test suite for the Shadow Tab Chrome extension. The test suite will ensure the extension's functionality, installation, and prevent regressions as the application evolves. The implementation follows a progressive coverage approach, starting with critical paths and expanding incrementally, using modern Playwright best practices and the Page Object Model pattern for maintainability.
 
 ## Goals
 

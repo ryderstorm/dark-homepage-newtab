@@ -2,7 +2,7 @@
 
 ## Introduction/Overview
 
-This specification defines the enhancement of the Dark New Tab Homepage Chrome extension to allow users to configure their preferred new tab destination URL through a dedicated options page. The extension will display a dark background immediately when a new tab opens, then redirect to the user-configured URL once the target page is ready. This provides a seamless, customizable new tab experience while maintaining the dark aesthetic and eliminating the white flash commonly seen when opening new tabs.
+This specification defines the enhancement of the Shadow Tab Chrome extension to allow users to configure their preferred new tab destination URL through a dedicated options page. The extension will display a dark background immediately when a new tab opens, then redirect to the user-configured URL once the target page is ready. This provides a seamless, customizable new tab experience while maintaining the dark aesthetic and eliminating the white flash commonly seen when opening new tabs.
 
 ## Goals
 

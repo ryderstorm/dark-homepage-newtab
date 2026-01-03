@@ -36,7 +36,7 @@ How should the new icons be integrated?
 
 What text content needs to be updated for the rebrand?
 
-- [x] (A) **All references** - Update every mention of "Dark New Tab Homepage" to "Shadow Tab"
+- [x] (A) **All references** - Update every mention of the old name to "Shadow Tab"
 - [ ] (B) **User-facing only** - Update manifest name, description, and UI text only
 - [ ] (C) **Documentation only** - Update README, docs, and comments but keep some internal references
 - [ ] (D) **Selective updates** - Only update specific text elements I'll specify

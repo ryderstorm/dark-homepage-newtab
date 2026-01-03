@@ -108,7 +108,7 @@
 - [x] 3.13 Add semantic-release command step with .releaserc.toml configuration
 - [x] 3.14 Create `.github/chainguard/` directory
 - [x] 3.15 Create `.github/chainguard/main-semantic-release.sts.yaml` file with subject_pattern for repository
-- [x] 3.16 Update subject_pattern in STS config to match repository path (ryderstorm/dark-homepage-newtab)
+- [x] 3.16 Update subject_pattern in STS config to match repository path (ryderstorm/shadow-tab)
 - [x] 3.17 Reset manifest.json version from "1.0.0" to "0.1.0" to align with semantic-release initial version
 - [x] 3.18 Delete any existing git tags if present (for clean semantic-release start)
 - [x] 3.19 Remove CHANGELOG.md if it exists (semantic-release will generate it)

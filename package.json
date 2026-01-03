@@ -1,5 +1,5 @@
 {
-  "name": "dark-homepage-newtab",
+  "name": "shadow-tab",
   "version": "0.1.0",
   "description": "Shadow Tab - A sleek dark new tab page that redirects to your custom URL with customizable colors and timing.",
   "private": true,

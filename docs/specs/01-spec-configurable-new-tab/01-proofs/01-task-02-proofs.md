@@ -9,7 +9,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Dark New Tab Homepage - Options</title>
+    <title>Shadow Tab - Options</title>
 
     <!-- Hint Chrome that this is dark UI -->
     <meta name="color-scheme" content="dark" />
@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Dark New Tab Homepage Settings</h1>
+      <h1>Shadow Tab Settings</h1>
 
       <form id="options-form">
         <div class="form-group">
@@ -320,7 +320,7 @@ All proof artifacts demonstrate:
 
 ![Options page displaying URL input field with dark theme styling](screenshots/01-task-02-options-page-valid-url.png)
 
-**Description:** The options page displays the "Dark New Tab Homepage Settings" interface with dark theme styling. The URL input field contains a valid URL (`https://homepage.stormhold.net`) that was loaded from chrome.storage.local. The page demonstrates:
+**Description:** The options page displays the "Shadow Tab Settings" interface with dark theme styling. The URL input field contains a valid URL (`https://homepage.stormhold.net`) that was loaded from chrome.storage.local. The page demonstrates:
 
 - Dark background (#05060a) with light text (#e5e5e5)
 - URL input field with label "New Tab URL"

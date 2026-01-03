@@ -127,7 +127,7 @@ Customize the background color of both the new tab page and options page.
 ### Project Structure
 
 ```text
-dark-homepage-newtab/
+shadow-tab/
 ├── manifest.json          # Extension manifest
 ├── newtab.html            # New tab page HTML
 ├── newtab.js              # New tab page JavaScript

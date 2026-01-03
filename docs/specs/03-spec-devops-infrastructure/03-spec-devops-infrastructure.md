@@ -2,7 +2,7 @@
 
 ## Introduction/Overview
 
-This specification defines the integration of modern DevOps infrastructure and development workflow automation into the Dark New Tab Homepage Chrome extension project. The integration incorporates CI/CD automation, quality gates via pre-commit hooks, semantic versioning with automated releases, comprehensive documentation standards, and repository management best practices from the liatrio-labs/base-repo-template. This will establish a professional development workflow that automates versioning, enforces code quality, and streamlines the release process for the Chrome extension.
+This specification defines the integration of modern DevOps infrastructure and development workflow automation into the Shadow Tab Chrome extension project. The integration incorporates CI/CD automation, quality gates via pre-commit hooks, semantic versioning with automated releases, comprehensive documentation standards, and repository management best practices from the liatrio-labs/base-repo-template. This will establish a professional development workflow that automates versioning, enforces code quality, and streamlines the release process for the Chrome extension.
 
 ## Goals
 

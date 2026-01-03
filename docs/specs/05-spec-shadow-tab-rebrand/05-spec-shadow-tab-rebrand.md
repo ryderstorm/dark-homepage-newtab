@@ -2,7 +2,7 @@
 
 ## Overview
 
-Transform the "Dark New Tab Homepage" Chrome extension into "Shadow Tab" with a complete visual rebranding featuring a new color palette, custom icons, and updated marketing messaging while maintaining all existing functionality and technical performance characteristics.
+Transform the Chrome extension into "Shadow Tab" with a complete visual rebranding featuring a new color palette, custom icons, and updated marketing messaging while maintaining all existing functionality and technical performance characteristics.
 
 ## User Stories
 
@@ -43,7 +43,7 @@ As a user of dark-mode dashboards and self-hosted tools, I want a sleek, profess
 
 ### FR-3: Text Content Updates
 
-- Update all user-facing text from "Dark New Tab Homepage" to "Shadow Tab"
+- Update all user-facing text to "Shadow Tab"
 - Update manifest.json name and description
 - Update README.md, documentation, and code comments
 - Ensure no old branding references remain in user-facing elements

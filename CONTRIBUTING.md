@@ -10,8 +10,8 @@ Thank you for your interest in contributing to Shadow Tab! This document provide
 2. Clone your fork locally:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/dark-homepage-newtab.git
-   cd dark-homepage-newtab
+   git clone https://github.com/YOUR_USERNAME/shadow-tab.git
+   cd shadow-tab
    ```
 
 3. Set up pre-commit hooks (see Pre-commit Hooks section below)

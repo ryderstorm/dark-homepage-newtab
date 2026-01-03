@@ -12,9 +12,9 @@ File exists at project root with Node.js project configuration:
 
 ```json
 {
-  "name": "dark-homepage-newtab",
+  "name": "shadow-tab",
   "version": "0.1.0",
-  "description": "Dark new tab that loads my self-hosted homepage.dev dashboard.",
+  "description": "Shadow Tab - A sleek dark new tab page that redirects to your custom URL.",
   "private": true,
   "scripts": {
     "test": "playwright test",

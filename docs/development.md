@@ -28,8 +28,8 @@ pre-commit --version
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/ryderstorm/dark-homepage-newtab.git
-cd dark-homepage-newtab
+git clone https://github.com/ryderstorm/shadow-tab.git
+cd shadow-tab
 ```
 
 ### 2. Install Pre-commit Hooks
@@ -45,7 +45,7 @@ This installs git hooks that run automatically on `git commit` to check code qua
 1. Open Chrome and navigate to `chrome://extensions/`
 2. Enable "Developer mode" (toggle in top-right corner)
 3. Click "Load unpacked"
-4. Select the `dark-homepage-newtab` directory
+4. Select the `shadow-tab` directory
 5. The extension should now appear in your extensions list
 
 ### 4. Verify Installation

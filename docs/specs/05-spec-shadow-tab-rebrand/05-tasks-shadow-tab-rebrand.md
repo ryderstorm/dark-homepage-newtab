@@ -2,7 +2,7 @@
 
 ## Overview
 
-This task list breaks down the Shadow Tab rebrand into demoable units of work that transform the "Dark New Tab Homepage" extension into the new "Shadow Tab" branding while maintaining all existing functionality.
+This task list breaks down the Shadow Tab rebrand into demoable units of work that complete the "Shadow Tab" branding while maintaining all existing functionality.
 
 ## Tasks
 
@@ -93,7 +93,7 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 
 #### 4.0 Tasks
 
-- [ ] 4.1 Update `manifest.json` name from "Dark New Tab Homepage" to "Shadow Tab"
+- [ ] 4.1 Update `manifest.json` name to "Shadow Tab"
 - [ ] 4.2 Update `manifest.json` description with marketing-optimized copy
 - [ ] 4.3 Update `newtab.html` title to "Shadow Tab"
 - [ ] 4.4 Update `options.html` title to "Shadow Tab - Options"
@@ -122,7 +122,7 @@ This task list breaks down the Shadow Tab rebrand into demoable units of work th
 
 #### 5.0 Tasks
 
-- [ ] 5.1 Audit all files for remaining "Dark New Tab Homepage" references
+- [ ] 5.1 Audit all files for remaining old branding references
 - [ ] 5.2 Create before/after comparison screenshots
 - [ ] 5.3 Verify all assets are properly organized and referenced
 - [ ] 5.4 Run full test suite to ensure no functionality regression

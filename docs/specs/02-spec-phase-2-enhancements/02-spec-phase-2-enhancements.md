@@ -2,7 +2,7 @@
 
 ## Introduction/Overview
 
-This specification defines Phase 2 enhancements for the Dark New Tab Homepage Chrome extension, focusing on user experience improvements, visual polish, and quality-of-life features. These enhancements build upon the foundation established in Phase 1, adding sophisticated URL validation with domain resolution, improved visual feedback through animations and color customization, accessibility improvements, and better error handling. The goal is to create a polished, professional extension that provides a delightful user experience while maintaining simplicity and ease of use.
+This specification defines Phase 2 enhancements for the Shadow Tab Chrome extension, focusing on user experience improvements, visual polish, and quality-of-life features. These enhancements build upon the foundation established in Phase 1, adding sophisticated URL validation with domain resolution, improved visual feedback through animations and color customization, accessibility improvements, and better error handling. The goal is to create a polished, professional extension that provides a delightful user experience while maintaining simplicity and ease of use.
 
 ## Goals
 

@@ -81,7 +81,7 @@ $ ls -la icon.svg favicon.ico
 
 ### Documentation References Updated
 
-- All "Dark New Tab Homepage" references replaced with "Shadow Tab"
+- All old branding references replaced with "Shadow Tab"
 - Marketing copy optimized for Chrome Web Store
 - Technical documentation updated with new branding
 - Contributing guidelines reflect project name change

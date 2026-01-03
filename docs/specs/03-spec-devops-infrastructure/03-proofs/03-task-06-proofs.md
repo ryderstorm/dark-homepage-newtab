@@ -9,7 +9,7 @@ The Renovate Bot configuration file has been created:
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Renovate Bot configuration for Dark New Tab Homepage Chrome extension",
+  "description": "Renovate Bot configuration for Shadow Tab Chrome extension",
   "extends": ["config:best-practices", ":semanticCommits", ":enablePreCommit"],
   "labels": ["dependencies"],
   "reviewersFromCodeOwners": true,

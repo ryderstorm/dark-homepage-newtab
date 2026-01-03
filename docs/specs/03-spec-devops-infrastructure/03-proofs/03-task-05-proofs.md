@@ -91,21 +91,21 @@ The following commands are ready to be executed once GitHub CLI authentication i
 
 ```bash
 # Configure repository settings
-gh api -X PATCH repos/ryderstorm/dark-homepage-newtab \
+gh api -X PATCH repos/ryderstorm/shadow-tab \
   -f allow_squash_merge=true \
   -f allow_merge_commit=false \
   -f allow_rebase_merge=false \
   -f delete_branch_on_merge=true
 
 # Apply branch protection ruleset
-gh api -X POST repos/ryderstorm/dark-homepage-newtab/rulesets \
+gh api -X POST repos/ryderstorm/shadow-tab/rulesets \
   --input .github/ruleset-config.json
 
 # Verify repository settings
-gh api repos/ryderstorm/dark-homepage-newtab
+gh api repos/ryderstorm/shadow-tab
 
 # Verify branch protection ruleset
-gh api repos/ryderstorm/dark-homepage-newtab/rulesets
+gh api repos/ryderstorm/shadow-tab/rulesets
 ```
 
 **Note**: These commands require GitHub CLI authentication. The configuration files are ready and can be applied once authentication is configured.
